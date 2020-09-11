@@ -1,0 +1,21 @@
+.AppHeader {
+  background-color:#af1e23;
+  display:flex;
+}
+.AppLogo {
+  max-height:40px;
+  margin: 10px 20px;
+
+}
+.menu {
+  display:flex;
+  flex-wrap: nowrap;
+  margin-left: auto;
+  margin-right: 20px;
+}
+.menuItem {
+  color:#ffffff; 
+  padding:15px; 
+  margin: auto;
+  text-decoration:none;
+  font-size:14px}
