@@ -1,13 +1,69 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+body {font-family: 'PT Sans', Helvetica, Arial, sans-serif;}
+h1, h2, h3, h4, h5, h6 {color: #831417;}
+img {display:block}
+.alt-grid [class*="col-"] {padding-left:0;padding-right:0}
+.alt-grid .row {margin-left:0;margin-right:0; padding:10px}
+
+/* container adjusted */
+.alt-grid.container {width:100%;max-width:none;padding:0;}
+
+label {margin:0px}
+
+.imageLeft {background-image: url('https://www.meisterdrucke.es/kunstwerke/500px/Wassily_Kandinsky_-_Jaune_Rouge_Bleu_-_%28MeisterDrucke-30032%29.jpg'); opacity: 0.7; border-radius:5px;
+min-width:180px;}
+
+.AppHeader {
+  background-color:#af1e23;
+  display:flex;
+  margin-bottom:30px
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.btn {background-color: #af1e23;}
+.btn:hover {background-color: #831417;}
+.AppLogo {
+  max-height:40px;
+  margin: 10px 20px;
 }
+.menu {
+  display:flex;
+  flex-wrap: nowrap;
+  margin-left: auto;
+  margin-right: 20px;
+}
+.menuItem {
+  color:#ffffff !important; 
+  padding:15px; 
+  margin: auto;
+  text-decoration:none;
+  font-size:14px}
+
+  h1.pageTitle {color: #af1e23;font-weight: 600; padding-left:10px; font-size: 35px;}
+
+  .registerInput {display:block; margin: 5px 0px; width:100%;}
+  .registerForm {padding-left:5px}
+  .socialLoginIcon {max-width:30px; margin:5px}
+ footer.footer {padding:10px; background-color:#e6e6e6; font-size:12px; margin-top:80px; height:50px}
+ .hide-mobile-menu {display:flex}
+ /* Menu Mobile */
+ .toggler {display:none}
+ @media all and (max-width:960px){
+ .menu, .AppHeader {display:block}
+}
+@media all and (max-width:700px){
+  .hide-mobile-menu {display:none}
+  .show-mobile-menu {display:block}
+  .menuItem {display:block}
+  .toggler {display:block;}
+  .toggler img {max-width:40px; display:block; float:right; margin-top:-40px}
+ }
+ 
+ /* Product Page */
+ .productPrice {font-size: 30px !important;
+  font-weight: 900 !important;
+  color: #00823b !important;}
+.smallDesc {font-size:13px; margin:10px 0px; display:block}
+.productResume {font-size:14px}
+.comprar-btn {font-size: 20px; color:#ffffff !important; margin-top: 20px;}
+.hide {display:none !important}
+.show {display:block !important}
