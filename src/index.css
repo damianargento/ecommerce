@@ -23,7 +23,8 @@ min-width:180px;}
 .btn:hover {background-color: #831417;}
 .AppLogo {
   max-height:40px;
-  margin: 10px 20px;
+  margin: 10px 20px; 
+  padding-top:5px
 }
 .menu {
   display:flex;
@@ -56,6 +57,7 @@ min-width:180px;}
   .menuItem {display:block}
   .toggler {display:block;}
   .toggler img {max-width:40px; display:block; float:right; margin-top:-40px}
+  .AppHeader {min-height: 50px;}
  }
  
  /* Product Page */

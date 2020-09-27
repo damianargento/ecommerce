@@ -28,7 +28,7 @@ class Menu extends Component{
     return(
       <div className="menu">
          <div className="toggler" onClick={hideDesktopMenu}><img alt="" src={toggler}/></div>
-         <div className={this.state.classToHide}>
+         <div className={`menuItems ${this.state.classToHide}`}>
         {menuItems.map(item=><a className="menuItem" key={item.key} href={item.href}>{item.name}</a>)}
         </div>
       </div>
