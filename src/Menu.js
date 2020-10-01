@@ -6,7 +6,6 @@ class Menu extends Component{
       super(props)
       this.state = {
         classToHide: "hide-mobile-menu",
-        setPageSelected: this.props.setPageSelected
       } 
   } 
   render(){
@@ -30,7 +29,7 @@ class Menu extends Component{
       <div className="menu">
          <div className="toggler" onClick={hideDesktopMenu}><img alt="" src={toggler}/></div>
          <div className={`menuItems ${this.state.classToHide}`}>
-        {menuItems.map(item=><div className="menuItem" onClick={this.state.setPageSelected(item.href)} key={item.key}>{item.name}</div>)}
+        {menuItems.map(item=><div className="menuItem" key={item.key}>{item.name}</div>)}
         </div>
       </div>
       )

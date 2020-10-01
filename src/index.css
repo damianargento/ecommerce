@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 body {font-family: 'PT Sans', Helvetica, Arial, sans-serif;}
+main {height:77vh}
 h1, h2, h3, h4, h5, h6 {color: #831417;}
 img {display:block}
 .alt-grid [class*="col-"] {padding-left:0;padding-right:0}

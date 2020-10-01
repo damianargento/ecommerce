@@ -6,7 +6,6 @@ import SocialLogin from './SocialLogin'
 class RegisterPage extends React.Component {
 
   render() {
-    if(this.props.selected === "login"){
     return (
     <div className="container">
       <div className="row RegisterWrapper">
@@ -27,8 +26,7 @@ class RegisterPage extends React.Component {
           </div>   
       </div>
     </div>
-  )}
-else return null
+  )
 }
 }
 

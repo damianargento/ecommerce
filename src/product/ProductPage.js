@@ -22,7 +22,7 @@ class ProductPage extends React.Component {
     let showModal = () => {
       this.setState({displayModal: "show"})
     }
-    if (this.props.selected === "product"){
+
     return (
     <div className="container product-wrapper">
       <div className="row">
@@ -60,10 +60,7 @@ class ProductPage extends React.Component {
           </div>   
       </div>
     </div>
-  )}
-  else {
-    return null
-  }
+  )
 }
   
 }

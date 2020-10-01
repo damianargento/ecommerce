@@ -30,7 +30,7 @@ class CategoryView extends React.Component {
     )
   }
   render() {
-    if(this.props.selected === "category"){
+
     return (
     <div className="container category-view">
       <div className="row">
@@ -62,8 +62,7 @@ class CategoryView extends React.Component {
           </div>
         </div>
       </div>
-  )}
-  else return null
+  )
 }
 }
 
