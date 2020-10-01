@@ -19,11 +19,11 @@ min-width:180px;}
   margin-bottom:30px
 }
 
-.btn {background-color: #af1e23;}
-.btn:hover {background-color: #831417;}
+.btn {background-color: #af1e23; color:#ffffff}
+.btn:hover {background-color: #831417; color:#ffffff; text-decoration:underline;}
 .AppLogo {
   max-height:40px;
-  margin: 10px 20px; 
+  margin: 0px 20px 10px; 
   padding-top:5px
 }
 .menu {
@@ -61,11 +61,15 @@ min-width:180px;}
  }
  
  /* Product Page */
- .productPrice {font-size: 30px !important;
-  font-weight: 900 !important;
-  color: #00823b !important;}
+ .productPrice {font-size: 30px;
+  font-weight: 900 ;
+  color: #00823b;}
 .smallDesc {font-size:13px; margin:10px 0px; display:block}
 .productResume {font-size:14px}
 .comprar-btn {font-size: 20px; color:#ffffff !important; margin-top: 20px;}
 .hide {display:none !important}
 .show {display:block !important}
+
+/* Category View */
+.category-view .productPrice {font-size: 18px; font-weight: normal; margin: 5px 0;}
+.category-view .productName {font-size: 18px; font-weight:bold; margin: 5px 0;}

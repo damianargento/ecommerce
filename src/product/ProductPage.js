@@ -22,9 +22,10 @@ class ProductPage extends React.Component {
     let showModal = () => {
       this.setState({displayModal: "show"})
     }
+    if (this.props.selected === "product"){
     return (
-    <div className="container">
-      <div className="row RegisterWrapper">
+    <div className="container product-wrapper">
+      <div className="row">
           <div className="col-md-2">
             Componente de Categorias - WIP
             <br />
@@ -51,7 +52,7 @@ class ProductPage extends React.Component {
                 </div>
                 <div className="col-md-6">
                   <img src={this.state.img} width="300" alt={this.state.name} />
-                  <button aria-label="comprar" onClick={showModal} class="btn comprar-btn">Comprar</button>
+                  <button aria-label="comprar" onClick={showModal} className="btn comprar-btn">Comprar</button>
                   <div className={this.state.displayModal}>Gracias por su compra</div>
                 </div>
               </div>
@@ -60,6 +61,11 @@ class ProductPage extends React.Component {
       </div>
     </div>
   )}
+  else {
+    return null
+  }
+}
+  
 }
 
 export default ProductPage;

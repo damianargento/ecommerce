@@ -5,7 +5,8 @@ class Menu extends Component{
   constructor(props) {
       super(props)
       this.state = {
-        classToHide: "hide-mobile-menu"
+        classToHide: "hide-mobile-menu",
+        setPageSelected: this.props.setPageSelected
       } 
   } 
   render(){
@@ -19,17 +20,17 @@ class Menu extends Component{
   let menuItems = [
     {name: "Nosotros", href: "#nosotros", key:"1"},
     {name: "Como comprar", href: "#comprar", key:"2"},
-    {name: "Novedades", href: "#novedades", key:"3"},
-    {name: "Recomendados", href: "#recomendados" , key:"4"},
-    {name: "Contacto", href: "#contacto", key:"5"},
-    {name: "Registrarse", href: "#registrarse", key:"6"},
-    {name: "Ingresar", href: "#ingresar", key:"7"}]
+    {name: "Novedades", href: "category", key:"3"},
+    {name: "Recomendados", href: "product" , key:"4"},
+    {name: "Contacto", href: "contacto", key:"5"},
+    {name: "Registrarse", href: "login", key:"6"},
+    {name: "Ingresar", href: "login", key:"7"}]
 
     return(
       <div className="menu">
          <div className="toggler" onClick={hideDesktopMenu}><img alt="" src={toggler}/></div>
          <div className={`menuItems ${this.state.classToHide}`}>
-        {menuItems.map(item=><a className="menuItem" key={item.key} href={item.href}>{item.name}</a>)}
+        {menuItems.map(item=><div className="menuItem" onClick={this.state.setPageSelected(item.href)} key={item.key}>{item.name}</div>)}
         </div>
       </div>
       )
