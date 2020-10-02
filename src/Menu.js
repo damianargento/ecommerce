@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
 import toggler from './img/hamburger-white.png'
 
 class Menu extends Component{
@@ -17,8 +18,8 @@ class Menu extends Component{
   }
 
   let menuItems = [
-    {name: "Nosotros", href: "#nosotros", key:"1"},
-    {name: "Como comprar", href: "#comprar", key:"2"},
+    {name: "Nosotros", href: "nosotros", key:"1"},
+    {name: "Como comprar", href: "comprar", key:"2"},
     {name: "Novedades", href: "category", key:"3"},
     {name: "Recomendados", href: "product" , key:"4"},
     {name: "Contacto", href: "contacto", key:"5"},
@@ -29,7 +30,7 @@ class Menu extends Component{
       <div className="menu">
          <div className="toggler" onClick={hideDesktopMenu}><img alt="" src={toggler}/></div>
          <div className={`menuItems ${this.state.classToHide}`}>
-        {menuItems.map(item=><div className="menuItem" key={item.key}>{item.name}</div>)}
+         {menuItems.map(item=><Link to={`/${item.href}`}><div className="menuItem" key={item.key}>{item.name}</div></Link>)}
         </div>
       </div>
       )

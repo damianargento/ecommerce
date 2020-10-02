@@ -1,9 +1,9 @@
 import React from 'react';
-import './index.css';
-import Logo from './Logo'
-import Menu from './Menu'
-import Footer from './Footer'
-import CategoryView from './category-view/CategoryView'
+import '../index.css';
+import Logo from '../Logo'
+import Menu from '../Menu'
+import Footer from '../Footer'
+import CategoryView from '../category-view/CategoryView'
 // import RegisterPage from './login/RegisterPage'
 // import ProductPage from './product/ProductPage'
 
