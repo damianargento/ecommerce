@@ -6,7 +6,6 @@ import Footer from '../Footer'
 import RegisterPage from '../login/RegisterPage'
 
 function Login() {
-
   return (
     <div className="AppWrapper">
       <header className="AppHeader">
@@ -22,5 +21,4 @@ function Login() {
     </div>
   );
 }
-
 export default Login;

@@ -30,7 +30,7 @@ class Menu extends Component{
       <div className="menu">
          <div className="toggler" onClick={hideDesktopMenu}><img alt="" src={toggler}/></div>
          <div className={`menuItems ${this.state.classToHide}`}>
-         {menuItems.map(item=><Link to={`/${item.href}`}><div className="menuItem" key={item.key}>{item.name}</div></Link>)}
+         {menuItems.map(item=><Link to={`/${item.href}/`}><div className="menuItem" key={item.key}>{item.name}</div></Link>)}
         </div>
       </div>
       )

@@ -4,8 +4,6 @@ import Logo from '../Logo'
 import Menu from '../Menu'
 import Footer from '../Footer'
 import CategoryView from '../category-view/CategoryView'
-// import RegisterPage from './login/RegisterPage'
-// import ProductPage from './product/ProductPage'
 
 function App() {
 
@@ -16,8 +14,6 @@ function App() {
        <Menu />
       </header>
       <main>
-        {/* <RegisterPage /> */}
-        {/* <ProductPage /> */}
         <CategoryView />
       </main>
       <footer className="footer container alt-grid">
