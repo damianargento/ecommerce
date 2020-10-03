@@ -1,17 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Route} from 'react-router'
+import {Link, Route, Router} from 'react-router'
 import {BrowserRouter} from  'react-router-dom'
+import CategoryView from './category-view/CategoryView';
 import './index.css';
 import App from './Pages/App';
 import Login from './Pages/Login'
+import Product from './Pages/Product'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
     <BrowserRouter>
       <div>
-        <Route path='/' component={App} />
+        <Route exact path='/' component={App} />
+        <Route path='/category/' component={App} />
         <Route path='/login/' component={Login} />
+        <Route path='/product/' component={Product} />
       </div>
     </BrowserRouter>,
   document.getElementById('root')
