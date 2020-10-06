@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 body {font-family: 'PT Sans', Helvetica, Arial, sans-serif;}
-main {height:77vh}
+
 h1, h2, h3, h4, h5, h6 {color: #831417;}
 img {display:block}
 .alt-grid [class*="col-"] {padding-left:0;padding-right:0}
@@ -74,3 +74,10 @@ min-width:180px;}
 /* Category View */
 .category-view .productPrice {font-size: 18px; font-weight: normal; margin: 5px 0;}
 .category-view .productName {font-size: 18px; font-weight:bold; margin: 5px 0;}
+.category-view .product {width:25%; float:left; padding:10px}
+.category-view .productImage {min-height:278px; position:relative}
+.category-view img {position:absolute; bottom:0px}
+@media all and (max-width:700px){
+.category-view .product {width:50%;}
+}
+.categoryMenuItem {text-decoration:none; color:#831417; font-size: 15px;}

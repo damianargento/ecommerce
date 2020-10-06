@@ -1,5 +1,7 @@
 import React from 'react';
-// import PageTitle from '../PageTitle'
+import PageTitle from '../../PageTitle'
+import {Link} from 'react-router-dom'
+import CategoriesMenu from '../../CategoriesMenu'
 
 class CategoryView extends React.Component {
   constructor(props) {
@@ -16,7 +18,7 @@ class CategoryView extends React.Component {
     .then(
       (result) => {
         this.setState({
-          isLoaded: false,
+          isLoaded: true,
           items: result,
         })
       },
@@ -30,40 +32,45 @@ class CategoryView extends React.Component {
     )
   }
   render() {
-
+    if(this.state.isLoaded === false) {
+    return(
+      <div className="container category-view">
+      <div className="row">
+          <div className="col-md-2">
+           <CategoriesMenu />
+          </div>
+          <div className="col-md-10">
+    <div>Loading...</div>
+    </div>
+        </div>
+      </div>) 
+    }
+    else {
     return (
     <div className="container category-view">
       <div className="row">
           <div className="col-md-2">
-            Componente de Categorias - WIP
-            <br />
-            Diseño grafico
-            <br />
-            Artes plasticas
-            <br />
-            Moda
+           <CategoriesMenu />
           </div>
           <div className="col-md-10">
-            {/* Como esta pagina va a ser general para el home y a modo de test no creo que haga falta ponerle titulo */}
-            {/* <PageTitle /> */}
-          <div className="container">
-            <div className="row">
+            {/* Esta pagina llevara el titulo de la categoria seleccionada. */}
+             <PageTitle title={this.props.match.params.name ? this.props.match.params.name : "Ultimos Productos"}/> 
               {this.state.items.map(
                 (item) => 
-              <div className="col-md-3" key={item.sku}>
-                <img src={item.img} alt={`${item.name} cover`} width="100%"/>
+              <div className="product" key={item.sku}>
+                <div className="productImage">
+                  <img src={item.img} alt={`${item.name} cover`} width="100%"/>
+                </div>
                 <p className="productName">{item.name}</p>
                 <p className="productPrice">${item.price}</p>
-                <button className="btn">Ver Detalle</button>
+                <Link to={{pathname:'/product', state:{item}}} ><button className="btn">Ver Detalle</button></Link>
               </div>
               )}
-            </div>
-          </div>
           </div>
         </div>
       </div>
   )
-}
+}}
 }
 
 export default CategoryView;

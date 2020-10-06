@@ -1,6 +1,6 @@
 import React from 'react';
 import RegisterForm from './RegisterForm'
-import PageTitle from '../PageTitle'
+import PageTitle from '../../PageTitle'
 import SocialLogin from './SocialLogin'
 
 class RegisterPage extends React.Component {

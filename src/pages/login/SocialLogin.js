@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
-import facebookLogo from '../img/facebook.png'
-import twitterLogo from '../img/twitter.png'
-import googleLogo from '../img/google.png'
+import React from 'react';
+import facebookLogo from '../../img/facebook.png'
+import twitterLogo from '../../img/twitter.png'
+import googleLogo from '../../img/google.png'
 
-class SocialLogin extends Component{
-  render(){
+function SocialLogin() {
     let socialLogins = [
       {network: "Facebook", apiLogin:"https://developers.facebook.com/docs/facebook-login/", img:facebookLogo, key:1},
       {network: "Twitter", apiLogin:"https://developer.twitter.com/en/docs/authentication/guides/log-in-with-twitter", img:twitterLogo, key:2},
@@ -20,7 +19,6 @@ class SocialLogin extends Component{
         </div>
         )}
     </div>)
-    }
  }
  
 export default SocialLogin;
