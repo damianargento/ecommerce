@@ -10,7 +10,6 @@ import ProductPage from './pages/product/ProductPage'
 import RegisterPage from './pages/login/RegisterPage'
 
 function App() {
-
   return (
   <BrowserRouter>
     <div className="AppWrapper">

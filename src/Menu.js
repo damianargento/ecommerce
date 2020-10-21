@@ -18,14 +18,14 @@ class Menu extends Component{
   }
 
   let menuItems = [
-    {name: "Categoria", href: "category", key:"1"},
+    {name: "Ultimos Productos", href: "category", key:"1"},
     {name: "Registrarse", href: "login", key:"2"}]
 
     return(
       <div className="menu">
          <div className="toggler" onClick={hideDesktopMenu}><img alt="" src={toggler}/></div>
          <div className={`menuItems ${this.state.classToHide}`}>
-         {menuItems.map(item=><Link to={`/${item.href}/`}><div className="menuItem" key={item.key}>{item.name}</div></Link>)}
+         {menuItems.map(item=><Link key={item.key} to={`/${item.href}/`}><div className="menuItem" >{item.name}</div></Link>)}
         </div>
       </div>
       )
