@@ -81,3 +81,6 @@ min-width:180px;}
 .category-view .product {width:50%;}
 }
 .categoryMenuItem {text-decoration:none; color:#831417; font-size: 15px;}
+.login {margin-right:auto}
+.show {display:block !important}
+.hide {display:none !important}

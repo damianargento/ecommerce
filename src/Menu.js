@@ -19,7 +19,7 @@ class Menu extends Component{
 
   let menuItems = [
     {name: "Ultimos Productos", href: "category", key:"1"},
-    {name: "Registrarse", href: "login", key:"2"}]
+    {name: "Registrarse", href: "signUp", key:"2"}]
 
     return(
       <div className="menu">

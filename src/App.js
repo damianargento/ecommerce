@@ -7,7 +7,9 @@ import Menu from './Menu'
 import Footer from './Footer'
 import CategoryView from './pages/category-view/CategoryView'
 import ProductPage from './pages/product/ProductPage'
-import RegisterPage from './pages/login/RegisterPage'
+import RegisterPage from './pages/signUp/RegisterPage'
+import Login from './Login'
+
 
 function App() {
   return (
@@ -15,13 +17,14 @@ function App() {
     <div className="AppWrapper">
       <header className="AppHeader">
        <Logo />
+       <Login />
        <Menu />
       </header>
       <main>
         <Route path='/' component={CategoryView} exact />
         <Route path='/category/:name' component={CategoryView} exact />
         <Route path='/category/' component={CategoryView} exact />
-        <Route path='/login/' component={RegisterPage} exact />
+        <Route path='/signUp/' component={RegisterPage} exact />
         <Route path='/product/' component={ProductPage} exact />
       </main>
       <footer className="footer container alt-grid">
