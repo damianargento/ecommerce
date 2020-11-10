@@ -1,51 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PageTitle from '../../PageTitle'
 import {Link} from 'react-router-dom'
 import CategoriesMenu from '../../CategoriesMenu'
-import {Container, Row, Col} from 'react-bootstrap'
-class CategoryView extends React.Component {
-  constructor(props) {
-     super(props)
-     this.state = {
-       error: null,
-       isLoaded: false,
-       items: []
-         }
-  }
-  componentDidMount() {
-    fetch('http://www.damianargento.com/React.js-utn/Ecommerce/fake-api-response.json')
-    .then(res => res.json())
-    .then(
-      (result) => {
-        this.setState({
-          isLoaded: true,
-          items: result,
-        })
-      },
-      (error) => {
-        this.setState({
-          isLoaded: true,
-          error
-        })
-        console.log(error)
-      }
-    )
-  }
-  render() {
-    if(this.state.isLoaded === false) {
-    return(
-      <div className="container category-view">
-      <div className="row">
-          <div className="col-md-2">
-           <CategoriesMenu />
-          </div>
-          <div className="col-md-10">
-    <div>Loading...</div>
-    </div>
-        </div>
-      </div>) 
+import {Container, Row, Col, Spinner} from 'react-bootstrap'
+import firebase from '../../config/Firebase'
+
+function CategoryView (props) {
+  const [items, setItems] = useState([])
+  const [isLoaded, handleLoading] = useState(false)
+  const style = {
+    productName:{ 
+      fontSize: "18px",
+      fontWeight:"bold"
     }
-    else {
+  }
+  useEffect(() => {
+    firebase.db.collection("/productos").get()
+    .then(querySnapshot => {setItems(querySnapshot.docs)})
+    .then(() => handleLoading(true))
+    .catch(err => console.log(err))
+  }, [handleLoading, items]);
+
+
     return (
     <Container>
       <Row>
@@ -53,20 +29,23 @@ class CategoryView extends React.Component {
            <CategoriesMenu />
           </Col>
           <Col md={10}>
-          <PageTitle title={this.props.match.params.name ? this.props.match.params.name : "Ultimos Productos"}/> 
+          <PageTitle title={props.match.params.name ? props.match.params.name : "Ultimos Productos"}/> 
           <Container>
             <Row>
-            {/* Esta pagina llevara el titulo de la categoria seleccionada. */}
-              {this.state.items.map(
+            { !isLoaded &&
+             <Spinner animation="grow" variant="danger" />
+            }
+              {
+                isLoaded &&
+                items.map(
                 (item) =>
-
-              <Col md={3} key={item.sku}>
+              <Col md={3} key={item.id}>
                 <div className="productImage">
-                  <img src={item.img} alt={`${item.name} cover`} width="100%"/>
+                  <img src={item.data().imglink} alt={`${item.data().title} cover`} width="100%"/>
                 </div>
-                <p className="productName">{item.name}</p>
-                <p className="productPrice">${item.price}</p>
-                <Link to={{pathname:'/product', state:{item}}} ><button className="btn">Ver Detalle</button></Link>
+                <p style={style.productName}>{item.data().title}</p>
+                <p className="productPrice">${item.data().price}</p>
+                <Link to={`/product/${item.id}`}><button className="btn">Ver Detalle</button></Link>
               </Col>
               )}
              </Row> 
@@ -75,7 +54,5 @@ class CategoryView extends React.Component {
         </Row>
       </Container>
   )
-}}
 }
-
 export default CategoryView;

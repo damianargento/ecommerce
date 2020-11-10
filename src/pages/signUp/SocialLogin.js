@@ -3,6 +3,7 @@ import facebookLogo from '../../img/facebook.png'
 import twitterLogo from '../../img/twitter.png'
 import googleLogo from '../../img/google.png'
 
+
 function SocialLogin() {
     let socialLogins = [
       {network: "Facebook", apiLogin:"https://developers.facebook.com/docs/facebook-login/", img:facebookLogo, key:1},

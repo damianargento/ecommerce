@@ -25,7 +25,7 @@ function App() {
         <Route path='/category/:name' component={CategoryView} exact />
         <Route path='/category/' component={CategoryView} exact />
         <Route path='/signUp/' component={RegisterPage} exact />
-        <Route path='/product/' component={ProductPage} exact />
+        <Route path='/product/:id' component={ProductPage} exact />
       </main>
       <footer className="footer container alt-grid">
         <Footer />

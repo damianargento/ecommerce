@@ -12,6 +12,9 @@ import * as firebase from 'firebase'
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore()
+      firebase.db = db
+      firebase.auth = firebase.auth()
       firebase.analytics();
 
 export default firebase
